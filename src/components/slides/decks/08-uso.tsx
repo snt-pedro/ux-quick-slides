@@ -52,18 +52,6 @@ export default function Uso({ index, total }: SlideProps) {
           ))}
         </div>
 
-        <div
-          className="flex items-center slide-body"
-          style={{ gap: 20, padding: "26px 36px", borderRadius: 24, background: "var(--slide-red-soft)" }}
-        >
-          <span className="slide-kicker shrink-0" style={{ color: "var(--slide-red)" }}>
-            Limitação
-          </span>
-          <span>
-            Amostra pequena e de fonte única. As entrevistas existem para <b>triangular</b> esses
-            achados.
-          </span>
-        </div>
       </div>
     </SlideLayout>
   );

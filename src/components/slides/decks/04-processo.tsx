@@ -2,15 +2,15 @@ import { SlideLayout, SlideTitle, type SlideProps } from "../SlideLayout";
 
 // Geometria do Double Diamond (coordenadas do SVG)
 const W = 1600;
-const H = 400;
+const H = 600;
 const mid = H / 2;
 const q = W / 4;
 
 const phases = [
-  { label: "Descobrir", sub: "divergir", x: q },
-  { label: "Definir", sub: "convergir", x: q * 2 },
-  { label: "Desenvolver", sub: "divergir", x: q * 2 },
-  { label: "Entregar", sub: "convergir", x: q * 4 },
+  { label: "Descobrir", sub: "divergir", x: q * 0.6, y: 0 },
+  { label: "Definir", sub: "convergir", x: q * 1.4, y: 0 },
+  { label: "Desenvolver", sub: "divergir", x: q * 2.6, y: 0 },
+  { label: "Entregar", sub: "convergir", x: q * 3.4, y: 0 },
 ];
 
 export default function Processo({ index, total }: SlideProps) {
@@ -39,12 +39,12 @@ export default function Processo({ index, total }: SlideProps) {
             />
             <line x1={q} y1={14} x2={q} y2={H - 14} stroke="var(--slide-red)" strokeWidth={2} strokeDasharray="6 10" />
             <line x1={q * 3} y1={14} x2={q * 3} y2={H - 14} stroke="#111" strokeWidth={2} strokeDasharray="6 10" />
-            {phases.map((p) => (
+            {phases.map((p, i) => (
               <g key={p.label}>
-                <text x={p.x} y={mid - 4} textAnchor="middle" fontSize={38} fontWeight={700} fill="#111" fontFamily="Inter">
+                <text x={p.x} y={mid - 20 + (i % 2) * 0} textAnchor="middle" fontSize={36} fontWeight={700} fill="#111" fontFamily="Inter">
                   {p.label}
                 </text>
-                <text x={p.x} y={mid + 36} textAnchor="middle" fontSize={22} fill="#767676" fontFamily="Inter">
+                <text x={p.x} y={mid + 20 + (i % 2) * 0} textAnchor="middle" fontSize={20} fill="#767676" fontFamily="Inter">
                   {p.sub}
                 </text>
               </g>

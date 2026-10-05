@@ -37,15 +37,15 @@ const plan: { phase: string; items: Item[]; why: string }[] = [
 export default function Entregaveis({ index, total }: SlideProps) {
   return (
     <SlideLayout index={index} total={total} kicker="Planejamento de entregáveis">
-      <div className="flex flex-1 flex-col" style={{ gap: 40 }}>
-        <div className="grid flex-1 grid-cols-4" style={{ gap: 20 }}>
+      <div className="flex flex-1 flex-col">
+        <div className="grid flex-1 grid-cols-4" style={{ gap: 28 }}>
           {plan.map((p, i) => (
             <div
               key={p.phase}
               className="flex flex-col"
               style={{
-                padding: "36px 36px",
-                gap: 24,
+                padding: "48px 44px",
+                gap: 28,
                 borderRadius: 32,
                 background: i < 2 ? "var(--slide-red-soft)" : "var(--slide-soft)",
               }}
@@ -56,30 +56,30 @@ export default function Entregaveis({ index, total }: SlideProps) {
               >
                 {p.phase}
               </span>
-              <div className="flex flex-col" style={{ gap: 18 }}>
+              <div className="flex flex-col flex-1" style={{ gap: 20 }}>
                 {p.items.map((it) => (
                   <div key={it.n} className="flex" style={{ gap: 16 }}>
                     <span
                       className="slide-num flex shrink-0 items-center justify-center"
                       style={{
-                        width: 44,
-                        height: 44,
+                        width: 48,
+                        height: 48,
                         borderRadius: 999,
                         background: it.done ? "var(--slide-red)" : "#fff",
                         color: it.done ? "#fff" : "var(--slide-fg)",
                         fontWeight: 700,
-                        fontSize: 22,
+                        fontSize: 24,
                       }}
                     >
                       {it.done ? "✓" : it.n}
                     </span>
-                    <span className="slide-body" style={{ fontWeight: 600 }}>
+                    <span className="slide-body" style={{ fontWeight: 600, alignSelf: "center" }}>
                       {it.t}
                     </span>
                   </div>
                 ))}
               </div>
-              <span className="slide-caption" style={{ color: "#444", marginTop: "auto" }}>
+              <span className="slide-caption" style={{ color: "#444" }}>
                 {p.why}
               </span>
             </div>

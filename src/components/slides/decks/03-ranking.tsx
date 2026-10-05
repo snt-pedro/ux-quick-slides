@@ -25,10 +25,10 @@ const tiebreaks = [
 export default function Ranking({ index, total }: SlideProps) {
   return (
     <SlideLayout index={index} total={total} kicker="Resultado do ranking">
-      <div className="flex flex-1 flex-col" style={{ gap: 44 }}>
-        <div className="flex flex-1" style={{ gap: 64 }}>
+      <div className="flex flex-1 flex-col items-center justify-center" style={{ gap: 44 }}>
+        <div className="flex" style={{ gap: 48, width: "100%" }}>
           {/* tabela */}
-          <div className="flex flex-col" style={{ flex: 1.25, gap: 28 }}>
+          <div className="flex flex-col" style={{ flex: 1, gap: 28 }}>
             <table className="slide-table">
               <thead>
                 <tr>
@@ -63,13 +63,13 @@ export default function Ranking({ index, total }: SlideProps) {
           </div>
 
           {/* desempate */}
-          <div className="flex flex-col" style={{ flex: 1, gap: 20 }}>
+          <div className="flex flex-col" style={{ flex: 1.2, gap: 24 }}>
             {tiebreaks.map((t) => (
-              <div key={t.n} className="slide-pin flex flex-col" style={{ padding: "36px 40px", gap: 14 }}>
+              <div key={t.n} className="slide-pin flex flex-col" style={{ padding: "32px 40px", gap: 12 }}>
                 <span className="slide-kicker" style={{ color: "var(--slide-muted)" }}>
                   Desempate {t.n}
                 </span>
-                <span className="slide-body-lg" style={{ fontWeight: 700 }}>
+                <span style={{ fontSize: 36, fontWeight: 700, lineHeight: 1.2 }}>
                   {t.rule}
                 </span>
               </div>

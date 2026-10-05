@@ -10,9 +10,6 @@ export default function Encerramento({ index, total }: SlideProps) {
         <h1 className="slide-display slide-title-lg" style={{ fontWeight: 800 }}>
           Obrigado!
         </h1>
-        <span className="slide-subtitle" style={{ color: "var(--slide-muted)", fontWeight: 500 }}>
-          Dúvidas?
-        </span>
       </div>
     </SlideLayout>
   );
