@@ -237,6 +237,50 @@
   font-size: var(--slide-caption);
   line-height: 1.3;
 }
+
+@media print {
+  @page {
+    size: 1920px 1080px;
+    margin: 0;
+  }
+
+  html,
+  body,
+  #root {
+    width: 1920px;
+    min-height: auto;
+    margin: 0;
+    background: #ffffff !important;
+    overflow: visible !important;
+  }
+
+  .print-deck {
+    width: 1920px;
+    background: #ffffff;
+  }
+
+  .print-slide-wrapper {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .print-slide-wrapper:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .print-slide-wrapper .slide-content {
+    transform: none !important;
+  }
+
+  button,
+  [class*="pointer-events"] {
+    display: none !important;
+  }
+}
 .slide-kicker {
   font-size: var(--slide-kicker);
   font-weight: 700;
