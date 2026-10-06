@@ -47,6 +47,15 @@ export function CountdownTimer({ className }: { className?: string }) {
     setRemaining(deadline - Date.now());
   }, []);
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      // Ignora Ctrl+R / Cmd+R para não interferir no recarregar da página
+      if ((e.key === "r" || e.key === "R") && !e.ctrlKey && !e.metaKey && !e.altKey) reset();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [reset]);
+
   const clamped = Math.max(0, remaining);
   const totalSeconds = Math.ceil(clamped / 1000);
   const mm = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
@@ -57,7 +66,7 @@ export function CountdownTimer({ className }: { className?: string }) {
   return (
     <button
       onClick={reset}
-      title="Clique para reiniciar (10:00)"
+      title="Aperte R para reiniciar (10:00)"
       className={className}
       style={{ color: expired ? "var(--slide-red)" : warning ? "var(--slide-amber)" : undefined }}
     >

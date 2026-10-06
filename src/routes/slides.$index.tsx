@@ -116,7 +116,7 @@ function SlidePage() {
           className="pointer-events-none absolute right-6 top-6 rounded-full px-4 py-2 font-mono text-xs text-black/60 transition-opacity"
           style={{ background: "rgba(0,0,0,0.06)" }}
         >
-          ← → para navegar · F para tela cheia · P para PDF · clique no tempo para reiniciar
+          ← → para navegar · F para tela cheia · P para PDF · R para reiniciar o tempo
         </div>
       )}
 
