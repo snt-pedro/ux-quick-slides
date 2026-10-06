@@ -15,8 +15,8 @@ const steps = [
 export default function Escolha({ index, total }: SlideProps) {
   return (
     <SlideLayout index={index} total={total} kicker="Como escolhemos o app">
-      <div className="flex flex-1 flex-col" style={{ gap: 64 }}>
-        <div className="flex flex-1 items-stretch" style={{ gap: 20 }}>
+      <div className="flex items-stretch" style={{ gap: 20, height: 600, marginTop: 80 }}>
+        <div className="flex items-stretch" style={{ gap: 20, height: 600 }}>
           {steps.map((s, i) => (
             <Fragment key={s.label}>
               <div className="slide-pin flex flex-1 flex-col" style={{ padding: 48, gap: 20 }}>

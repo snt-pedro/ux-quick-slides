@@ -1,10 +1,10 @@
 import { SlideLayout, SlideTitle, type SlideProps } from "../SlideLayout";
 
 const timeline = [
-  { when: "Out · 1ª quinzena", phase: "Descobrir", what: "Entrevistas" },
-  { when: "Out · 2ª quinzena", phase: "Definir", what: "Persona + jornada" },
+  { when: "Out · 1ª quinzena", phase: "Descobrir", what: "Desk Research + CSD" },
+  { when: "Out · 2ª quinzena", phase: "Definir", what: "Personas + jornada" },
   { when: "Nov", phase: "Desenvolver", what: "Wireframes + protótipo" },
-  { when: "Início de dez", phase: "Entregar", what: "Teste de usabilidade" },
+  { when: "Início de dez", phase: "Entregar", what: "Teste de usabilidade + SAM + SUS" },
   { when: "07–09/12", phase: "Final", what: "Apresentação + artefatos", last: true },
 ];
 

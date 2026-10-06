@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ExportPdfRouteImport } from './routes/export-pdf'
 import { Route as SlidesIndexRouteImport } from './routes/slides.$index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExportPdfRoute = ExportPdfRouteImport.update({
+  id: '/export-pdf',
+  path: '/export-pdf',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SlidesIndexRoute = SlidesIndexRouteImport.update({
@@ -25,27 +31,31 @@ const SlidesIndexRoute = SlidesIndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/export-pdf': typeof ExportPdfRoute
   '/slides/$index': typeof SlidesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/export-pdf': typeof ExportPdfRoute
   '/slides/$index': typeof SlidesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/export-pdf': typeof ExportPdfRoute
   '/slides/$index': typeof SlidesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/slides/$index'
+  fullPaths: '/' | '/export-pdf' | '/slides/$index'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/slides/$index'
-  id: '__root__' | '/' | '/slides/$index'
+  to: '/' | '/export-pdf' | '/slides/$index'
+  id: '__root__' | '/' | '/export-pdf' | '/slides/$index'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ExportPdfRoute: typeof ExportPdfRoute
   SlidesIndexRoute: typeof SlidesIndexRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/export-pdf': {
+      id: '/export-pdf'
+      path: '/export-pdf'
+      fullPath: '/export-pdf'
+      preLoaderRoute: typeof ExportPdfRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/slides/$index': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ExportPdfRoute: ExportPdfRoute,
   SlidesIndexRoute: SlidesIndexRoute,
 }
 export const routeTree = rootRouteImport

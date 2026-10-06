@@ -4,7 +4,7 @@ export default function Capa({ index, total }: SlideProps) {
   return (
     <SlideLayout index={index} total={total} bare>
       <div className="flex flex-1 items-center justify-between" style={{ gap: 120, paddingRight: 80 }}>
-        <div className="flex flex-1 flex-col justify-between h-full">
+        <div className="flex flex-1 flex-col justify-start h-full" style={{ gap: 440 }}>
           <div className="flex flex-col" style={{ gap: 40, paddingTop: 60 }}>
             <h1 className="slide-display slide-title-lg" style={{ fontWeight: 800, lineHeight: 1.1, whiteSpace: "nowrap" }}>
               Redesign do<br />

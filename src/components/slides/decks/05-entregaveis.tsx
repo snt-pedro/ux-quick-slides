@@ -7,7 +7,7 @@ const plan: { phase: string; items: Item[]; why: string }[] = [
     phase: "Descobrir",
     items: [
       { n: 1, t: "Desk research (análise de reviews)", done: true },
-      { n: 2, t: "Entrevistas com 5 usuários" },
+      { n: 2, t: "Matriz CSD" },
     ],
     why: "Levantar problemas reais e confirmar o que os reviews mostram",
   },
@@ -17,7 +17,7 @@ const plan: { phase: string; items: Item[]; why: string }[] = [
       { n: 3, t: "Persona" },
       { n: 4, t: "Jornada do usuário com curva emocional" },
     ],
-    why: "Sintetizar quem usa, onde dói e o que sente",
+    why: "Quem usa, onde dói e o que sente",
   },
   {
     phase: "Desenvolver",
@@ -37,8 +37,8 @@ const plan: { phase: string; items: Item[]; why: string }[] = [
 export default function Entregaveis({ index, total }: SlideProps) {
   return (
     <SlideLayout index={index} total={total} kicker="Planejamento de entregáveis">
-      <div className="flex flex-1 flex-col">
-        <div className="grid flex-1 grid-cols-4" style={{ gap: 28 }}>
+      <div className="flex flex-1 flex-col justify-center">
+        <div className="grid grid-cols-4" style={{ gap: 28, height: 600 }}>
           {plan.map((p, i) => (
             <div
               key={p.phase}

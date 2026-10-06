@@ -3,7 +3,7 @@ import { SlideLayout, SlideTitle, type SlideProps } from "../SlideLayout";
 const links = [
   {
     finding: "Anúncios misturados aos pins",
-    use: "Roteiro das entrevistas + tarefa no teste",
+    use: "Tarefa no teste de usabilidade",
     task: "“Encontre uma ideia que não seja anúncio”",
   },
   {
